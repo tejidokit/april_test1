@@ -25,12 +25,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         
-        <button onClick={toggle}>
+        {/* <button onClick={toggle}>
           Click Me
-        </button>
-        <div>
+        </button> */}
+        {/* <div>
           NavBar 
-        </div>
+        </div> */}
 
         {open && <SayHello name="Cham" />}
 
