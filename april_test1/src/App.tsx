@@ -1,5 +1,4 @@
 import React from "react";
-import { FunctionComponent, useState } from "react";
 
 
 
@@ -16,40 +15,61 @@ import { FunctionComponent, useState } from "react";
 //   return "Hello"
 // }
 
-function Greeting() {
-  return (<h4>hello world</h4>)
+const Greeting: React.FunctionComponent<{ time: number, place: string }> = ({time, place}) => {
+  return <h4>hello world</h4>
 }
 
-const Ayo = () => {
-  return React.createElement('h1',{}, 'Hello')
+
+
+interface IGreetingProps {
+  time: number;
+  place: string;
 }
+
+interface IGreetingProps2 extends IGreetingProps {
+  person?: string;
+}
+
+const Greeting2: React.FunctionComponent<IGreetingProps2> = ({children, time, place, person}) => {
+  return <>{children}</>
+}
+
+// const Ayo = () => {
+//   return ('h1',{},'Hello World')
+// }
+
 
 function App() {
-//   const [open, setOpen] = useState(false);
-//   const toggle = () => setOpen(!open);
 
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-        
-//         {/* <button onClick={toggle}>
-//           Click Me
-//         </button> */}
-//         {/* <div>
-//           NavBar 
-//         </div> */}
+  return (
+    <>
+      <Greeting time={6} place={"world"}/>
 
-//         {open && <SayHello name="Cham" />}
-
-//       </header>
-//     </div>
-//   );
-
-  
-
-  }
+      <Greeting2 time={6} place={"world"}>
+        hello
+      </Greeting2>
+    </>
+  )
+}
 
 export default App;
+
+
+export function App2() {
+
+  return (
+    <>
+      <Greeting time={6} place={"world"}/>
+
+      <Greeting2 time={6} place={"world"}>
+        hello
+      </Greeting2>
+    </>
+  )
+}
+
+
+
 
 // #############################
 
